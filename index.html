@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta charset="UTF-8" />
+    <meta content='yes' name='apple-mobile-web-app-capable' />
+    <meta content='yes' name='mobile-web-app-capable' />
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="black">
+    <link rel="app-touch-icon" href="assets/logos/icon-192x192-apple.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Site e Aplicativo PWA</title>
+</head>
+<body>
+    <div class="titulo">
+        <h2>Atividade do Ricardo</h2>
+        <h1>No Header um Titulo da Aplicação</h1>
+        <hr>
+        <p>- Eu quero um Emprego</p>
+        <p>- Voce não tem Experiencia!</p>
+        <p>- Mas eu preciso Trabalhar pra ter Experiencia</p>
+        <p>- Então Trabalhe!</p>
+        <p>- E por isso que Estou aqui!</p>
+        <p>- Precisa ter Experiencia!</p>
+        <p>- Como vou conseguir Experiencia sem Trabalhar?!?!?!</p>
+        <p>- Va trabalhar!</p>
+        <hr>
+    </div>
+    <div class="link">
+        <a href="pagina2.html">Ir para a Pagina 2</a>
+        <br><br><br>
+        <a href="indice.html">Ir para a Pagina  indice</a>
+        <br><br><br>
+        <a href="index2.html">Ir para a Pagina  index 2</a>
+    
+    </div>
+    <img src="assets/logos/borboleta.jfif"alt="Uma borboleta com asas de arco-íris pousando em uma flor">
+   
+</body>
+<script>
+
+document.addEventListener("DOWContentLoaded", function (event) {
+        if ('serviceWorker' in navigator) {
+            console.log('has serviceworker');
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('serviceWorker.js')
+                     .then((registration) => {
+                        console.log('Service worker registered.',
+                        registration);
+                     });
+            });
+        }
+        else {
+            console.log("Your browser not support serviceWorkers");
+        }
+    });
+
+</script>
+</html>

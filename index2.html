@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="manifest" href="manifest.webmanifest">
+    <meta charset="UTF-8" />
+    <meta content='yes' name='apple-mobile-web-app-capable' />
+    <meta content='yes' name='mobile-web-app-capable' />
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="black">
+    <link rel="app-touch-icon" href="assets/logos/icon-192x192-apple.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu Currículo</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+    background-color: #e7e7e7;
+  color: var(--blue-primary);
+  }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .contact-info {
+      font-size: 16px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .section-content {
+      font-size: 16px;
+    }
+    .redimensionar{
+    width: 400px;
+    height: 400px;
+    margin-top: 0px;
+    margin-left: 20px;
+    object-fit: cover;
+  }
+  .section {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 20px; /* Espaço após a linha */
+  margin-bottom: 20px; /* Espaço entre as seções */
+  }
+  
+  </style>
+</head>
+<body>
+  <header>
+    <img class="redimensionar" src="laine2.jpg">
+    <h1>Aislany Emilly Ferreira de Souza Morato</h1>
+  </header>
+
+  <div class="section">
+    <div class="section-title">Informações Pessoais</div>
+    <div class="section-content">
+      <p><strong>Idade:</strong> 18 anos</p>
+      <p><strong>Localização:</strong> Sumaré, Brasil</p>
+      <p><strong>Email:</strong> aislanye@gmail.com</p>
+      <p><strong>Telefone:</strong>(19) 98407-6699 </p>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Experiência Profissional</div>
+    <div class="section-content">
+      <p><strong>Cargo:</strong> Atendente de lojas e mercados</p>
+      <p><strong>Empresa:</strong>Alaska</p>
+      <p><strong>Data:</strong> Data de Início: 10/12/2021 - Data de Término: 21/08/2023 </p>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="section-title">Habilidades:</div>
+    <div class="section-content">
+      <p>Trabalho em Equipe </p>
+      <p>  Comunicação Eficaz   <p> 
+      <p>  Resolução de Problemas <p>
+    </div>
+  </div>
+</body>
+<script>
+
+  document.addEventListener("DOWContentLoaded", function (event) {
+          if ('serviceWorker' in navigator) {
+              console.log('has serviceworker');
+              window.addEventListener('load', () => {
+                  navigator.serviceWorker.register('serviceWorker.js')
+                       .then((registration) => {
+                          console.log('Service worker registered.',
+                          registration);
+                       });
+              });
+          }
+          else {
+              console.log("Your browser not support serviceWorkers");
+          }
+      });
+  
+  </script>
+</html>
